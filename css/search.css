@@ -1,0 +1,61 @@
+hr{
+  width: 80%;
+  border-top: 1px solid #212529;
+  margin-bottom: 20px;
+}
+
+#recipe-search{
+  padding-bottom: 80px;
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
+.section-heading{
+  padding-top: 20px;
+}
+
+#search-form{
+  padding-bottom: 20px;
+}
+
+.search-item{
+  padding: 0 5%;
+  padding-top: 10px;
+}
+
+#search-form select{
+  width: 100%;
+}
+
+#search-form button{
+  width: 100%;
+  margin-top: 15px;
+}
+
+.result-caption { 
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; 
+}
+
+#result{
+  width: 100%;
+  margin: auto;
+}
+
+.result-item{
+  padding: 15px;
+}
+
+.recipe-title{
+  font-weight: 700;
+}
+
+.caption-right{
+  text-align: right;
+}
+
+.recipe-rating{
+  font-size: 18px;
+  font-weight: 700;
+}

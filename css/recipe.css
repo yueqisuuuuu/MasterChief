@@ -1,0 +1,84 @@
+#mainNav{
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #212529;
+}
+
+section{
+  padding-top: 100px;
+}
+
+hr{
+  width: 80%;
+  border-top: 1px solid #212529;
+  margin: 40px auto;
+}
+
+#recipe{
+  padding-bottom: 50px;
+  background-color: rgba(256, 256, 256, 0.7);
+}
+
+.recipe-review{
+  padding-top: 20px;
+}
+
+.recipe-title{
+  font-weight: 700;
+}
+
+.caption-right{
+  text-align: right;
+}
+
+.recipe-rating, .recipe-hour{
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.caption-mid button{
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+}
+
+#gray-btn{
+  background-color: gray !important;
+  border-color: gray !important;
+}
+
+
+/* timer */
+#clock{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
+#clock input{
+  border-radius: 50px;
+  text-align: center;
+  border: 1px solid #fec810;
+}
+
+#clock button {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  background-color: #fed136;
+  border-color: #fed136; 
+  margin-top: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#clock button:hover{
+  background-color: #fec810;
+  border-color: #fec810;
+  color: white; 
+}
+
+#btns{
+  margin-left: 20px;
+}

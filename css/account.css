@@ -1,0 +1,37 @@
+#mainNav{
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #212529;
+}
+
+section{
+  padding-top: 100px;
+}
+
+hr{
+  width: 80%;
+  border-top: 1px solid #212529;
+  margin: 40px auto;
+}
+
+#account{
+  padding-bottom: 50px;
+  background-color: rgba(256, 256, 256, 0.7);
+}
+
+.recipe-review{
+  padding-top: 20px;
+}
+
+.recipe-title{
+  font-weight: 700;
+}
+
+.caption-right{
+  text-align: right;
+}
+
+.recipe-rating, .recipe-hour{
+  font-size: 24px;
+  font-weight: 700;
+}
