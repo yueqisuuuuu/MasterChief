@@ -11,12 +11,11 @@
   $cat=$_GET["cat"];
   $cui=$_GET["cui"];
   $lev=$_GET["lev"];
-  $rate=$_GET["rate"];
   $sort=$_GET["sort"];
   
   $select="SELECT * FROM recipe";
   $where="";
-  if ($cat != "none" || $cui != "none" || $lev != "none" || $rate != "none"){
+  if ($cat != "none" || $cui != "none" || $lev != "none"){
     if ($cat != "none"){
       $where .= " recipeCat=\"$cat\"";
     }
@@ -32,12 +31,7 @@
       }
       $where .= " recipeSkill=\"$lev\"";
     }
-    if ($rate != "none"){
-      if (!empty($where)){
-        $where .= " AND";
-      }
-      $where .= " recipeRate>=$rate";
-    }
+    
     $where = " WHERE$where";
   }
   $order="";
@@ -107,11 +101,11 @@
             <?php if($_SESSION['valid']){ ?>
               <div class="dropdown">
                 <li class="nav-item">
-                  <a class="nav-link special" href="account.php">Account <i class="fa fa-caret-down"></i></a>
+                  <a class="nav-link special drop-link" href="account.php">Account <i class="fa fa-caret-down"></i></a>
                 </li>
                 <div class="dropdown-content">
                   <li class="nav-item">
-                    <a id="sign-out" class="nav-link special" href="logout.php">Sign Out</a>
+                    <a id="sign-out" class="nav-link special drop-link" href="logout.php">Sign Out</a>
                   </li>
                 </div>
               </div>
@@ -141,54 +135,45 @@
                 <h6>Recipe Category</h6>
                 <select name="cat">
                   <option value="none">Choose Category</option>
-                  <option value="beef">Beef</option>
-                  <option value="chicken">Chicken</option>
-                  <option value="seafood">Seafood</option>
-                  <option value="pork">Pork</option>
-                  <option value="soup">Soup</option>
-                  <option value="dessert">Dessert/Snack</option>
-                  <option value="vege">Vegetarian</option>
-                  <option value="smoothie">Smoothie</option>
+                  <option value="beef" <?php if ($cat=="beef") {echo "selected='selected'"; } ?> >Beef</option>
+                  <option value="chicken" <?php if ($cat=="chicken") {echo "selected='selected'"; } ?> >Chicken</option>
+                  <option value="seafood" <?php if ($cat=="seafood") {echo "selected='selected'"; } ?> >Seafood</option>
+                  <option value="pork" <?php if ($cat=="pork") {echo "selected='selected'"; } ?> >Pork</option>
+                  <option value="soup" <?php if ($cat=="soup") {echo "selected='selected'"; } ?> >Soup</option>
+                  <option value="snack" <?php if ($cat=="snack") {echo "selected='selected'"; } ?> >Dessert/Snack</option>
+                  <option value="vege" <?php if ($cat=="vege") {echo "selected='selected'"; } ?> >Vegetarian</option>
+                  <option value="smoothie" <?php if ($cat=="smoothie") {echo "selected='selected'"; } ?> >Smoothie</option>
                 </select>
               </div>
               <div class="search-item col-lg-4">
                 <h6>Cuisine</h6>
                 <select name="cui">
                   <option value="none">Choose Cuisine</option>
-                  <option value="american">American</option>
-                  <option value="chinese">Chinese</option>
-                  <option value="indian">Indian</option>
-                  <option value="italian">Italian</option>
-                  <option value="japanese">Japanese</option>
-                  <option value="mexican">Mexican</option>
+                  <option value="american" <?php if ($cui=="american") {echo "selected='selected'"; } ?> >American</option>
+                  <option value="chinese" <?php if ($cui=="chinese") {echo "selected='selected'"; } ?> >Chinese</option>
+                  <option value="indian" <?php if ($cui=="indian") {echo "selected='selected'"; } ?> >Indian</option>
+                  <option value="italian" <?php if ($cui=="italian") {echo "selected='selected'"; } ?> >Italian</option>
+                  <option value="japanese" <?php if ($cui=="japanese") {echo "selected='selected'"; } ?> >Japanese</option>
+                  <option value="mexican" <?php if ($cui=="mexican") {echo "selected='selected'"; } ?> >Mexican</option>
                 </select>
               </div>
+              <div class="search-item col-lg-4"></div>
               <div class="search-item col-lg-4">
                 <h6>Skill Level</h6>
                 <select name="lev">
                   <option value="none">Choose Level</option>
-                  <option value="easy">Easy</option>
-                  <option value="inter">Intermediate</option>
-                  <option value="hard">Hard</option>
-                </select>
-              </div>
-              <div class="search-item col-lg-4">
-                <h6>Rating</h6>
-                <select name="rate">
-                  <option value="none">Choose Rating</option>
-                  <option value="4.5">4.5+</option>
-                  <option value="4.0">4.0+</option>
-                  <option value="3.0">3.0+</option>
-                  <option value="2.0">2.0+</option>
+                  <option value="easy" <?php if ($lev=="easy") {echo "selected='selected'"; } ?> >Easy</option>
+                  <option value="inter" <?php if ($lev=="inter") {echo "selected='selected'"; } ?> >Intermediate</option>
+                  <option value="hard" <?php if ($lev=="hard") {echo "selected='selected'"; } ?> >Hard</option>
                 </select>
               </div>
               <div class="search-item col-lg-4">
                 <h6>Sort By</h6>
                 <select name="sort">
                   <option value="none">Default</option>
-                  <option value="pop">Popularity</option>
-                  <option value="skill-h">Skill Level (High to Low)</option>
-                  <option value="skill-l">Skill Level (Low to High)</option>
+                  <option value="pop" <?php if ($sort=="pop") {echo "selected='selected'"; } ?> >Popularity</option>
+                  <option value="skill-h" <?php if ($sort=="skill-h") {echo "selected='selected'"; } ?> >Skill Level (High to Low)</option>
+                  <option value="skill-l" <?php if ($sort=="skill-l") {echo "selected='selected'"; } ?> >Skill Level (Low to High)</option>
                 </select>
               </div>
               <div class="search-item col-lg-4">
@@ -314,6 +299,12 @@
           signupModal.style.display = "none";
       }
   }
+  
+  function SelectElement()
+{    
+    var element = document.getElementById('leaveCode');
+    element.value = valueToSelect;
+}
   </script>
   
 
