@@ -163,6 +163,12 @@ footer {
     display: block;
 }
 
+@media (min-width: 992px) {
+  .drop-link{
+    width: 130px;
+  }
+}
+
 
 /* Sign in modal */
 
