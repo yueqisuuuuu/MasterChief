@@ -76,11 +76,11 @@
             <?php if($_SESSION['valid']){ ?>
               <div class="dropdown">
                 <li class="nav-item">
-                  <a class="nav-link special" href="account.php">Account <i class="fa fa-caret-down"></i></a>
+                  <a class="nav-link special drop-link" href="account.php">Account <i class="fa fa-caret-down"></i></a>
                 </li>
                 <div class="dropdown-content">
                   <li class="nav-item">
-                    <a id="sign-out" class="nav-link special" href="logout.php">Sign Out</a>
+                    <a id="sign-out" class="nav-link special drop-link" href="logout.php">Sign Out</a>
                   </li>
                 </div>
               </div>
