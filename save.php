@@ -19,6 +19,8 @@
 
   $sql = "INSERT INTO save(uid, recipeID) VALUES ('$uid','$recipeID')"; 
   if (mysqli_query($mysql, $sql)){ 
+    $sql1 = "UPDATE recipe SET recipeCount = recipeCount + 1 WHERE recipeID = $recipeID";
+    mysqli_query($mysql, $sql1);
     header("Location: recipe.php?recipeID=$recipeID"); 
     } 
   else { 
