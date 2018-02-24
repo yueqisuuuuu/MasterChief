@@ -27,5 +27,5 @@
     echo "Error"; 
     header("Location: recipe.php?recipeID=$recipeID"); 
   } 
-  mysqli_close($mysql); 
+  mysqli_close($mysql);  
 ?>
